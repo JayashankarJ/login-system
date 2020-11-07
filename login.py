@@ -7,11 +7,11 @@ print("\n")
 print("Hello all,this is my simple program of login system using python")
 print("Create your account")
 name=input("Username : ")
-user=input ("Password : ")
+username=input ("Password : ")
 print("\n")
 
-if us.islower():
-	password=input("Choose a strong Password")
+if username.islower():
+	password=input("Choose a strong Password : ")
 	if len(password) < 8:
 		print("Make sure your password is at lest 8 letters")
 	elif not password.isdigit():
@@ -23,9 +23,10 @@ if us.islower():
 else:
     print("invalid username!")
 
-password= hashlib.pbkdf2_hmac( 'sha256', password.encode('utf-8'), salt,  100000 )
+passwd= hashlib.pbkdf2_hmac( 'sha256', password.encode('utf-8'), salt,  100000 )
 
 print("Account created successfully")
+print("\n")
 print ("Login to your account")
 print("\n")
 us= input("Username : ")
@@ -33,7 +34,7 @@ pa= input("password : ")
 pa= hashlib.pbkdf2_hmac( 'sha256', password.encode('utf-8'), salt,  100000 )
 print("\n")
 if username == us :
-	if password == pa:
+	if passwd == pa:
 		print("Conngratulations! Login successful.")
 	else :
 		print("invalid password")
