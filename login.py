@@ -1,34 +1,50 @@
 import hashlib
 import os
-print("hello")
+
+# Generate salt
+salt = os.urandom(32)
+
+#Registration Section
+print("\n")
 print("Hello all,this is my simple program of login system using python")
-print("create your account")
-name=input("give your name:")
-user=input ("give your unique username:")
-if us.islower():
-     password=input("choose your strong password")
-     if len(password) < 8:
-         print("Make sure your password is at lest 8 letters")
-    elif not password.isdigit():
-        print("Make sure your password has a number")
-    elif not password.isupper():
-        print("Make sure your password has a capital letter")
-    else:
-        print("Your username and password inputted successfully")
+print("Create your account")
+name=input("Username : ")
+username=input ("Password : ")
+print("\n")
+
+# Validate Data
+if username.islower():
+	password=input("Choose a strong Password : ")
+	if len(password) < 8:
+		print("Make sure your password is at lest 8 letters")
+	elif not password.isdigit():
+		print("Make sure your password has a number")
+	elif not password.isupper():
+		print("Make sure your password has a capital letter")
+	else:
+		print("Your username and password generated successfully")
 else:
-    print("username invalid!")
-salt = os.urandom(32)
-password= hashlib.pbkdf2_hmac( 'sha256', password.encode('utf-8'), salt,  100000 )
+    print("invalid username!")
+
+#Encrypt Password
+passwd = hashlib.pbkdf2_hmac( 'sha256', password.encode('utf-8'), salt,  100000 )
+
 print("Account created successfully")
+print("\n")
+
+# Login Module
 print ("Login to your account")
+print("\n")
 us= input("Username : ")
-pa= input("password : ")
-salt = os.urandom(32)
+pa= input("Password : ")
 pa= hashlib.pbkdf2_hmac( 'sha256', password.encode('utf-8'), salt,  100000 )
+print("\n")
+
+# User Authentication
 if username == us :
-    if password == pa:
-        print("Conngratulations!Login successfully finished.")
-    else :
-        print("invalid password")
+	if passwd == pa:
+		print("Conngratulations! Login successful.")
+	else :
+		print("invalid password")
 else :
-    print("Invalid username")
+	print("Invalid username")
