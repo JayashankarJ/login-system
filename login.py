@@ -15,23 +15,23 @@ print("\n")
 # Validate Data
 j=1
 while j==3:
-if username.islower():
-	j=3
-	i=1
-	while i==2:
-	password=input("Choose a strong Password : ")
-	if len(password) < 8:
-		print("Make sure your password is at lest 8 letters")
+	if username.islower():
+		j=3
 		i=1
-	elif not password.isdigit():
-		print("Make sure your password has a number")
-		i=1
-	elif not password.isupper():
-		print("Make sure your password has a capital letter")
-		i=1
-	else:
-		print("Your username and password generated successfully")
-		i=2
+		while i==2:
+			password=input("Choose a strong Password : ")
+			if len(password) < 8:
+				print("Make sure your password is at lest 8 letters")
+				i=1
+			elif not password.isdigit():
+				print("Make sure your password has a number")
+				i=1
+			elif not password.isupper():
+				print("Make sure your password has a capital letter")
+				i=1
+			else:
+				print("Your username and password generated successfully")
+				i=2
 else:
     print("invalid username!")
     j=1
