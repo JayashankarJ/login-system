@@ -7,7 +7,7 @@ salt = os.urandom(32)
 #Registration Section
 print("\n")
 print("Hello all,this is my simple program of login system using python")
-print("Create your account")
+print("Create your account" + "\n")
 username=input("Username : ")
 password=input ("Password : ")
 print("\n")
@@ -32,9 +32,9 @@ while j==3:
 			else:
 				print("Your username and password generated successfully")
 				i=2
-else:
-    print("invalid username!")
-    j=1
+	else:
+	    print("invalid username!")
+	    j=1
 
 #Encrypt Password
 encpassword = hashlib.pbkdf2_hmac( 'sha256', password.encode('utf-8'), salt,  100000 )
