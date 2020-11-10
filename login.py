@@ -8,8 +8,8 @@ salt = os.urandom(32)
 print("\n")
 print("Hello all,this is my simple program of login system using python")
 print("Create your account")
-name=input("Username : ")
-username=input ("Password : ")
+username=input("Username : ")
+password=input ("Password : ")
 print("\n")
 
 # Validate Data
