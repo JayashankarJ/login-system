@@ -37,7 +37,7 @@ else:
     j=1
 
 #Encrypt Password
-passwd = hashlib.pbkdf2_hmac( 'sha256', password.encode('utf-8'), salt,  100000 )
+encpassword = hashlib.pbkdf2_hmac( 'sha256', password.encode('utf-8'), salt,  100000 )
 
 print("Account created successfully")
 print("\n")
@@ -47,12 +47,12 @@ print ("Login to your account")
 print("\n")
 us= input("Username : ")
 pa= input("Password : ")
-pa= hashlib.pbkdf2_hmac( 'sha256', password.encode('utf-8'), salt,  100000 )
+encpa= hashlib.pbkdf2_hmac( 'sha256', pa.encode('utf-8'), salt,  100000 )
 print("\n")
 
 # User Authentication
 if username == us :
-	if passwd == pa:
+	if encpassword == pa:
 		print("Conngratulations! Login successful.")
 	else :
 		print("invalid password")
