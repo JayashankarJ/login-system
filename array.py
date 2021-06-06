@@ -8,7 +8,7 @@ def validate():
         elif not password.isupper(): 
             print("Make sure your password has a capital letter in it")
         else:
-            print("Your password seems fine")
+            print("Your password seems fine!!")
             break
 
 validate()
